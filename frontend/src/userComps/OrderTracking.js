@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../contexts/AuthContext';
 import API_BASE_URL from '../config/api';
@@ -7,7 +7,6 @@ import './OrderTracking.css';
 
 const OrderTracking = () => {
   const { orderId } = useParams();
-  const navigate = useNavigate();
   const { user } = useAuth();
   const [order, setOrder] = useState(null);
   const [loading, setLoading] = useState(true);
